@@ -1,0 +1,409 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/* animated layered bars defaults */
+.meter {
+    font-family: monospace;
+    width: 100%;
+    height: 30px;
+    position: relative;
+    margin: 10px 2px;
+    background-color: #555;
+    padding: 0;
+    -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+    border: 1px solid #000;
+    background-image: -o-linear-gradient(
+        left,
+        red,
+        orange,
+        yellow,
+        lime,
+        green
+    );
+    background-image: -webkit-gradient(
+        linear,
+        left top, right top,
+        from(red),
+        color-stop(orange),
+        color-stop(yellow),
+        color-stop(lime),
+        to(green)
+    );
+    background-image: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        green
+    );
+    z-index: 1;
+}
+.meter > span {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(255, 255, 255, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 255, .2) 50%, 
+        rgba(255, 255, 255, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(255, 255, 255, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 255, .2) 50%, 
+        rgba(255, 255, 255, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-size: 50px 50px;
+    -webkit-animation: move 2s linear infinite;
+            animation: move 2s linear infinite;
+    overflow: hidden;
+    z-index: 2;
+}
+.meter > span > span {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;/*
+    display: block;
+    width: 100%;
+    height: 100%;*/
+    z-index: 3;
+}
+.meter > span > span > span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bolder;
+    background-image: -o-linear-gradient(
+        right,
+        red,
+        orange,
+        yellow,
+        lime,
+        green
+    );
+    background-image: -webkit-gradient(
+        linear,
+        right top, left top,
+        from(red),
+        color-stop(orange),
+        color-stop(yellow),
+        color-stop(lime),
+        to(green)
+    );
+    background-image: linear-gradient(
+        to left,
+        red,
+        orange,
+        yellow,
+        lime,
+        green
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #000;
+}
+
+/* animations */
+@-webkit-keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+/* rounded borders */
+.rounded, .rounded > span {
+    border-radius: 25px;
+}
+.rounded-trbl, .rounded-trbl > span {
+    border-radius: 0 25px;
+}
+.rounded-tlbr, .rounded-tlbr > span {
+    border-radius: 25px 0;
+}
+.rounded-bottom, .rounded-bottom > span {
+    border-radius: 0 0 25px 25px;
+}
+.rounded-top, .rounded-top > span {
+    border-radius: 25px 25px 0 0;
+}
+.rounded-left, .rounded-left > span {
+    border-radius: 25px 0 0 25px;
+}
+.rounded-right, .rounded-right > span {
+    border-radius: 0 25px 25px 0;
+}
+
+/* bar colors */
+.red {
+    background-image: none;
+    background-color: red;
+}
+.green {
+    background-image: none;
+    background-color: green;
+}
+.yellow {
+    background-image: none;
+    background-color: yellow;
+}
+.lime {
+    background-image: none;
+    background-color: lime;
+}
+.orange {
+    background-image: none;
+    background-color: orange;
+}
+.blue {
+    background-image: none;
+    background-color: blue;
+}
+.purple {
+    background-image: none;
+    background-color: purple;
+}
+.black {
+    background-image: none;
+    background-color: black;
+}
+.white {
+    background-image: none;
+    background-color: white;
+}
+
+/* candystripe colors */
+.red-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(255, 0, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 0, 0, .2) 50%, 
+        rgba(255, 0, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(255, 0, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 0, 0, .2) 50%, 
+        rgba(255, 0, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.green-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(0, 128, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 128, 0, .2) 50%, 
+        rgba(0, 128, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(0, 128, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 128, 0, .2) 50%, 
+        rgba(0, 128, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.yellow-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(255, 255, 0, 0.2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 0, .2) 50%, 
+        rgba(255, 255, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(255, 255, 0, 0.2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 0, .2) 50%, 
+        rgba(255, 255, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.lime-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(0, 255, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 255, 0, .2) 50%, 
+        rgba(0, 255, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(0, 255, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 255, 0, .2) 50%, 
+        rgba(0, 255, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.orange-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(255, 165, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 165, 0, .2) 50%, 
+        rgba(255, 165, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(255, 165, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 165, 0, .2) 50%, 
+        rgba(255, 165, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.blue-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(0, 0, 255, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 0, 255, .2) 50%, 
+        rgba(0, 0, 255, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(0, 0, 255, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 0, 255, .2) 50%, 
+        rgba(0, 0, 255, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.purple-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(128, 0, 128, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(128, 0, 128, .2) 50%, 
+        rgba(128, 0, 128, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(128, 0, 128, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(128, 0, 128, .2) 50%, 
+        rgba(128, 0, 128, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.black-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(0, 0, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 0, 0, .2) 50%, 
+        rgba(0, 0, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(0, 0, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 0, 0, .2) 50%, 
+        rgba(0, 0, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+
+/* remove candystripping */
+.no-stripes > span {
+    -webkit-animation: none;
+            animation: none;
+    background-image: none;
+}
+
+/* remove animation */
+.no-animation > span {
+    -webkit-animation: none;
+            animation: none;
+}

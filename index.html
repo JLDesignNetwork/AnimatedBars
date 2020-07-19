@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Animated Layered Bars Example</title>
+        <meta name="description" content="Layered Bars">
+        <meta name="author" content="JLDesignNetwork">
+        <meta name="version" content="1.1">
+        <link href="https://fonts.googleapis.com/css2?family=Fondamento&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link href="src/style.css" rel="stylesheet">
+        <style>
+            /* Default page style */
+            *, html {
+                padding: 0;
+                margin: 0;
+            }
+            article, aside, figure, footer, header, hgroup,
+            menu, nav, section {
+                display: block;
+            }
+            body {
+                color: #555;
+                background-color: #333;
+                font: 18pt 'Fondamento', cursive;
+                text-align: center;
+                text-shadow: 1px 1px 0 #000;
+                width: 490px;
+                margin: 80px auto;
+            }
+            h1 {
+                font-size: 42pt;
+                font-weight: 600;
+                margin: 0 0 30px 0;
+            }
+            p {
+                margin: 10px auto;
+            }
+            pre {
+                border: 1px solid #000;
+                background: #222;
+                text-align: left;
+                padding: 10px;
+                margin: 0 auto 30px auto;
+                overflow: auto;
+                font-size: small;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	    <script type="text/javascript" src="src/script.js"></script>
+    </head>
+    <body>
+        <h1>Layered Bars</h1>
+        <div>
+            <p>The following styles are with a text overlay. The text overlay can easily be excluded by leaving the internal span element blank.</p>
+            <p>These bars are based on the css layout provided by <a target="_blank" href="https://css-tricks.com/author/chriscoyier/">Chris Coyier</a> @ <a target="_blank" href="http://css-tricks.com">CSS-Tricks</a> and modified by Jeff Langdon @ <a target="blank" href="http://jldn.org">JL Design Network.</a></p>
+            <hr>
+            <label>How to use:</label>
+            <div>
+                Include the jquery library, the included js and css files into the head of your html.
+                <pre>
+&lt;link href=&quot;src/style.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;src/script.js&quot;&gt;&lt;/script&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Default Style</label>
+            <div class="meter">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(0%, #555));background-image: -o-linear-gradient(left, transparent 0%, #555 0%);background-image: linear-gradient(to right, transparent 0%, #555 0%)">
+                        <span>This line is set to 0%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class="meter"&gt;
+    &lt;span&gt;
+        &lt;span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(0%, #555));background-image: -o-linear-gradient(left, transparent 0%, #555 0%);background-image: linear-gradient(to right, transparent 0%, #555 0%)"&gt;
+            &lt;span&gt;This line is set 0%&lt;/span&gt;
+        &lt/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+                </pre>
+            </div>
+            <hr>
+            <label>No Animation Style</label>
+            <div class="meter no-animation">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(10%, #555));background-image: -o-linear-gradient(left, transparent 10%, #555 10%);background-image: linear-gradient(to right, transparent 10%, #555 10%)">
+                        <span>This line is set to 10%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter no-animation&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(10%, #555));background-image: -o-linear-gradient(left, transparent 10%, #555 10%);background-image: linear-gradient(to right, transparent 10%, #555 10%)&quot;&gt;
+            &lt;span&gt;This line is set to 10%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Stripeless Style</label>
+            <div class="meter no-stripes">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #555));background-image: -o-linear-gradient(left, transparent 20%, #555 20%);background-image: linear-gradient(to right, transparent 20%, #555 20%)">
+                        <span>This line is set to 20%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter no-stripes&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #555));background-image: -o-linear-gradient(left, transparent 20%, #555 20%);background-image: linear-gradient(to right, transparent 20%, #555 20%)&quot;&gt;
+            &lt;span&gt;This line is set to 20%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+                </pre>
+            </div>
+            <hr>
+            <label>Rounded Edge Style</label>
+            <div class="meter rounded">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(30%, #555));background-image: -o-linear-gradient(left, transparent 30%, #555 30%);background-image: linear-gradient(to right, transparent 30%, #555 30%)">
+                        <span>This line is set to 30%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter rounded&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(30%, #555));background-image: -o-linear-gradient(left, transparent 30%, #555 30%);background-image: linear-gradient(to right, transparent 30%, #555 30%)&quot;&gt;
+            &lt;span&gt;This line is set to 30%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+                </pre>
+            </div>
+            <hr>
+            <label>Top Left - Bottom Right Edge Style</label>
+            <div class="meter rounded-tlbr">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(40%, #555));background-image: -o-linear-gradient(left, transparent 40%, #555 40%);background-image: linear-gradient(to right, transparent 40%, #555 40%)">
+                        <span>This line is set to 40%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter rounded-tlbr&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(40%, #555));background-image: -o-linear-gradient(left, transparent 40%, #555 40%);background-image: linear-gradient(to right, transparent 40%, #555 40%)&quot;&gt;
+            &lt;span&gt;This line is set to 40%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Top Right - Bottom Left Edge Style</label>
+            <div class="meter rounded-trbl">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #555));background-image: -o-linear-gradient(left, transparent 50%, #555 50%);background-image: linear-gradient(to right, transparent 50%, #555 50%)">
+                        <span>This line is set to 50%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter rounded-trbl&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #555));background-image: -o-linear-gradient(left, transparent 50%, #555 50%);background-image: linear-gradient(to right, transparent 50%, #555 50%)&quot;&gt;
+            &lt;span&gt;This line is set to 50%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Top Rounded Edge Style</label>
+            <div class="meter rounded-top">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(60%, #555));background-image: -o-linear-gradient(left, transparent 0%, #555 0%);background-image: linear-gradient(to right, transparent 60%, #555 60%)">
+                        <span>This line is set to 60%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter rounded-top&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(60%, #555));background-image: -o-linear-gradient(left, transparent 0%, #555 0%);background-image: linear-gradient(to right, transparent 60%, #555 60%)&quot;&gt;
+            &lt;span&gt;This line is set to 60%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Bottom Rounded Edge Style</label>
+            <div class="meter rounded-bottom">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(70%, #555));background-image: -o-linear-gradient(left, transparent 70%, #555 70%);background-image: linear-gradient(to right, transparent 70%, #555 70%)">
+                        <span>This line is set to 70%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter rounded-bottom&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(70%, #555));background-image: -o-linear-gradient(left, transparent 70%, #555 70%);background-image: linear-gradient(to right, transparent 70%, #555 70%)&quot;&gt;
+            &lt;span&gt;This line is set to 70%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Left Rounded Edge Style</label>
+            <div class="meter rounded-left">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(80%, #555));background-image: -o-linear-gradient(left, transparent 80%, #555 80%);background-image: linear-gradient(to right, transparent 80%, #555 80%)">
+                        <span>This line is set to 80%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter rounded-left&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(80%, #555));background-image: -o-linear-gradient(left, transparent 80%, #555 80%);background-image: linear-gradient(to right, transparent 80%, #555 80%)&quot;&gt;
+            &lt;span&gt;This line is set to 80%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Right Rounded Edge Style</label>
+            <div class="meter rounded-right">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(90%, #555));background-image: -o-linear-gradient(left, transparent 90%, #555 90%);background-image: linear-gradient(to right, transparent 90%, #555 90%)">
+                        <span>This line is set to 90%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter rounded-right&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(90%, #555));background-image: -o-linear-gradient(left, transparent 90%, #555 90%);background-image: linear-gradient(to right, transparent 90%, #555 90%)&quot;&gt;
+            &lt;span&gt;This line is set to 90%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Default Style</label>
+            <div class="meter">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <div>
+                <pre>
+&lt;div class=&quot;meter&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+        </div>
+    </body>
+</html>
