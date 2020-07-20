@@ -44,13 +44,16 @@
                 overflow: auto;
                 font-size: small;
             }
+            .container {
+                text-align: left;
+            }
         </style>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 	    <script type="text/javascript" src="src/script.js"></script>
     </head>
     <body>
         <h1>Layered Bars</h1>
-        <div>
+        <div class="container">
             <p>The following styles are with a text overlay. The text overlay can easily be excluded by leaving the internal span element blank.</p>
             <p>These bars are based on the css layout provided by <a target="_blank" href="https://css-tricks.com/author/chriscoyier/">Chris Coyier</a> @ <a target="_blank" href="http://css-tricks.com">CSS-Tricks</a> and modified by Jeff Langdon @ <a target="blank" href="http://jldn.org">JL Design Network.</a></p>
             <hr>
@@ -72,6 +75,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class="meter"&gt;
@@ -92,6 +96,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter no-animation&quot;&gt;
@@ -112,6 +117,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter no-stripes&quot;&gt;
@@ -132,6 +138,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter rounded&quot;&gt;
@@ -152,6 +159,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter rounded-tlbr&quot;&gt;
@@ -172,6 +180,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter rounded-trbl&quot;&gt;
@@ -192,6 +201,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter rounded-top&quot;&gt;
@@ -212,6 +222,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter rounded-bottom&quot;&gt;
@@ -232,6 +243,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter rounded-left&quot;&gt;
@@ -252,6 +264,7 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter rounded-right&quot;&gt;
@@ -272,9 +285,395 @@
                     </span>
                 </span>
             </div>
+            <label>Implementation</label>
             <div>
                 <pre>
 &lt;div class=&quot;meter&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <br />
+            <br />
+            <h2>Bar Color & Candystripe Variations</h2>
+            <p>Please note that some variations show up better than others. Color variations can be mixed for better visual quality.</p>
+            <hr>
+            <label>Red Bar</label>
+            <div class="meter red">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter red&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Blue Bar</label>
+            <div class="meter blue">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter blue&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Green Bar</label>
+            <div class="meter green">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter green&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Lime Bar</label>
+            <div class="meter lime">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter lime&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Yellow Bar</label>
+            <div class="meter yellow">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter yellow&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Orange Bar</label>
+            <div class="meter orange">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter orange&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Black Bar</label>
+            <div class="meter black">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter black&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Purple Bar</label>
+            <div class="meter purple">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter purple&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>White Bar</label>
+            <div class="meter white">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter white&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Red Candystripe</label>
+            <div class="meter red-stripe">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter red-stripe&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Blue Candystripe</label>
+            <div class="meter blue-stripe">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter blue-stripe&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Green Candystripe</label>
+            <div class="meter green-stripe">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter green-stripe&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Lime Candystripe</label>
+            <div class="meter lime-stripe">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter lime-stripe&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Yellow Candystripe</label>
+            <div class="meter yellow-stripe">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter yellow-stripe&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Orange Candystripe</label>
+            <div class="meter orange-stripe">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter orange-stripe&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Black Candystripe</label>
+            <div class="meter red">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter black-stripe&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>Purple Candystripe</label>
+            <div class="meter purple-stripe">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter purple-stripe&quot;&gt;
+    &lt;span&gt;
+        &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
+            &lt;span&gt;This line is set to 100%&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;                
+                </pre>
+            </div>
+            <hr>
+            <label>White Candystripe</label>
+            <p>White is the default color of the candystripe</p>
+            <hr>
+            <label>Bar with mixed styles</label>
+            <div class="meter rounded black purple-stripe">
+                <span>
+                    <span style="background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)">
+                        <span>This line is set to 100%</span>
+                    </span>
+                </span>
+            </div>
+            <label>Implementation</label>
+            <div>
+                <pre>
+&lt;div class=&quot;meter rounded black purple-stripe&quot;&gt;
     &lt;span&gt;
         &lt;span style=&quot;background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(100%, #555));background-image: -o-linear-gradient(left, transparent 100%, #555 100%);background-image: linear-gradient(to right, transparent 100%, #555 100%)&quot;&gt;
             &lt;span&gt;This line is set to 100%&lt;/span&gt;
