@@ -1,2 +1,5 @@
 # Archives
 *.zip
+
+# Research & Developement
+.RandD
