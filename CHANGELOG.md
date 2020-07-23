@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Display error, with candystripe width when resizing window, fixed.
 - CHANGELOG.md created.
+- .gitignore created.
 
 ### Changed
 
