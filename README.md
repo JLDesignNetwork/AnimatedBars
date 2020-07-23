@@ -1,6 +1,6 @@
-# Animated Meter Bars
+# JLDN Meters
 
-The bars contained in this package are animated, layered HTML elements designed to mimick the html meter / progress tag.
+The code contained in this package is a result of searching for a way to implement a meter with a gradient background, but with a reveal based on a set inner width. The result is animated, layered HTML elements designed to mimick the html meter / progress tag.
 
 The CSS code and HTML layout provided has been edited from its original form. Both the CSS and HTML layout was designed by Chris Coyier at [CSS-Tricks](http://css-tricks.com).
 
@@ -13,6 +13,7 @@ The image below provides samples of the current meter styles in place.
 
 * Add support for other bar colors instead of the default gradient.
 * Add support for other candystripe colors instead of the default.
-* Add support for various meter sizing (x-small, small, large, x-large).
-* Add support for meter shadowing
-* Add support for font colors. The default is a gradient.
+* Add support for various meter sizing (x-small, small, medium, large, x-large).
+* Add support for meter shadowing.
+* Add support for font colors instead of the default gradient.
+* Add supoort for font sizing.
