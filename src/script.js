@@ -21,7 +21,6 @@ var inlineCSS = function(id, attribute, value) {
                         
             if (jQuery.inArray(value, heightArr) !== -1) {
                 $(id)[0].style.height = heightSizes[jQuery.inArray(value, heightArr)] + "px";
-                console.log([["value", value], ["computed height", $(id)[0].style.height]]);
             }
             break;
         case 'meter-shadow':
