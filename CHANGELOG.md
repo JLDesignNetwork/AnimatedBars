@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - jQuery support for changing meter attributes.
 - Script.js: Support for meter-length, meter-thickness, animation-speed, meter-color, font-size, meter-shadow, and reveal-width.
 - Index.html: list of acceptable attributes.
+- README.md: feature list.
 
 ### Changed
 
