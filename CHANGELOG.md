@@ -7,13 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2020-07-24
+
+### Added
+
+- jQuery support for changing meter attributes.
+- Script.js: Support for meter-length, meter-thickness, animation-speed, meter-color, font-size, meter-shadow, and reveal-width.
+- Index.html: list of acceptable attributes.
+
+### Changed
+
+- Style.css: no-animation and no-stripes.
+- Index.html: usage update; version update.
+- README.md: version update.
+
+### Removed
+
+- Style.css: meter colors and candystripe colors.
+- Index.html: some elements from todo list.
+- README.md: some elements from todo list.
+
 ## [1.1.1] - 2020-07-23
 
 ### Added
 
 - Display error, with candystripe width when resizing window, fixed.
-- CHANGELOG.md created.
-- .gitignore created.
+- CHANGELOG.md: created.
+- .gitignore: created.
 
 ### Changed
 
@@ -26,18 +46,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Support for multiple bars per page.
-- Index.html updated with usage instructions.
+- Index.html: updated with usage instructions.
 - Various borders style support.
 
 ### Changed
 
 - README.md: update.
-- CSS layout: vendor prefixing update.
+- Style.css: vendor prefixing update.
 
 ## [1.0.0] - 2020-07-19
 
 ### Added
 
 - Initial release.
-- README.md created.
-- Index.html created with examples.
+- README.md: created.
+- Index.html: created.

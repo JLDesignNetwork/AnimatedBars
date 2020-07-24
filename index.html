@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Animated Layered Bars Example</title>
+        <title>JLDN Meters v2.0.0</title>
         <meta name="description" content="Layered Bars">
         <meta name="author" content="JLDesignNetwork">
         <meta name="version" content="1.1">
@@ -80,7 +80,7 @@
             #myBtn:hover {
                 background-color: #555;
             }
-            .list-group-flush > li {
+            .list-group > li {
                 background: transparent !important;
             }
         </style>
@@ -89,7 +89,7 @@
     </head>
     <body>
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-        <h1>JLDN Meters v1.1</h1>
+        <h1>JLDN Meters v2.0</h1>
         <div class="container">
             <div id="menu" class="card bg-dark text-white text-center">
                 <div class="card-header">
@@ -99,6 +99,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-info nav-link" href="#usage" data-text="Usage instructions.">Usage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-info nav-link" href="#options" data-text="Data options.">Options</a>
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-info nav-link" href="#styles" data-text="Current styles.">Styles</a>
@@ -167,6 +170,76 @@
 
             <hr>
 
+            <div id="options" class="card bg-dark text-white">
+                <div class="card-header">
+                    Data Options
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Below is a list of current working meter options. These are seperate from the CSS classes, '.no-animation', '.no-candystripes' and the several border classes (which can be found in the styles section of this page).
+                    <p class="card-text">
+                        <ol class="list-group">
+                            <li class="list-group-item">meter-length: Exclude this option to use the default 100% length
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">super-long <div class="meter" id="mlsl" data-options='{"meter-length":"super-long"}'><span><span><span>Super Long</span></span></span></div></li>
+                                    <li class="list-group-item">x-long <div class="meter" id="mlxl" data-options='{"meter-length":"x-long"}'><span><span><span>X Long</span></span></span></div></li>
+                                    <li class="list-group-item">long <div class="meter" id="mll" data-options='{"meter-length":"long"}'><span><span><span>Long</span></span></span></div></li>
+                                    <li class="list-group-item">normal <div class="meter" id="mln" data-options='{"meter-length":"normal"}'><span><span><span>Normal</span></span></span></div></li>
+                                    <li class="list-group-item">short <div class="meter" id="mls" data-options='{"meter-length":"short"}'><span><span><span>Short</span></span></span></div></li>
+                                    <li class="list-group-item">x-short <div class="meter" id="mlxs" data-options='{"meter-length":"x-short"}'><span><span><span>X Short</span></span></span></div></li>
+                                    <li class="list-group-item">super-short <div class="meter" id="mlss" data-options='{"meter-length":"super-short"}'><span><span><span>Super Short</span></span></span></div></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">meter-thickness: Exclude this option to use the default 30px height
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">super-thick <div class="meter" id="mtsthick" data-options='{"meter-thickness":"super-thick"}'><span><span><span>Super Thick</span></span></span></div></li>
+                                    <li class="list-group-item">x-thick <div class="meter" id="mtxthick" data-options='{"meter-thickness":"x-thick"}'><span><span><span>X Thick</span></span></span></div></li>
+                                    <li class="list-group-item">thick <div class="meter" id="mtthick" data-options='{"meter-thickness":"thick"}'><span><span><span>Thick</span></span></span></div></li>
+                                    <li class="list-group-item">thin <div class="meter" id="mtthin" data-options='{"meter-thickness":"thin"}'><span><span><span>Thin</span></span></span></div></li>
+                                    <li class="list-group-item">x-thin <div class="meter" id="mtxthin" data-options='{"meter-thickness":"x-thin"}'><span><span><span>X Thin</span></span></span></div></li>
+                                    <li class="list-group-item">super-thin <div id="mtsthin" class="meter" data-options='{"meter-thickness":"super-thin"}'><span><span><span>Super Thin</span></span></span></div></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">meter-color: Exclude this option to use the default gradient. This option accepts valid color names, valid hex codes, valid rgb/rgba strings, and valid hsl strings.
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><div class="meter" id="mcblue" data-options='{"meter-color":"blue"}'><span><span><span>blue</span></span></span></div></li>
+                                    <li class="list-group-item"><div class="meter" id="mcred" data-options='{"meter-color":"rgba(255, 0, 0, 0.6)"}'><span><span><span>rgba(255,0,0,0.6)</span></span></span></div></li>
+                                    <li class="list-group-item"><div class="meter" id="mcblack" data-options='{"meter-color":"#000"}'><span><span><span>#000</span></span></span></div></li>
+                                    <li class="list-group-item"><div class="meter" id="mcbloodred" data-options='{"meter-color":"hsl(0,100%,20%)"}'><span><span><span>hsl(0,100%,20%)</span></span></span></div></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">meter-shadow: Exclude this option for no box-shadow. This option requires a valid CSS box-shadow string.
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><div class="meter" id="msnormal" data-options='{"meter-shadow":"1px 1px 5px 1px #000"}'><span><span><span>1px 1px 5px 1px #000</span></span></span></div></li>
+                                    <li class="list-group-item"><div class="meter" id="msinset" data-options='{"meter-shadow":"inset 1px 1px 5px 1px #000"}'><span><span><span>inset 1px 1px 5px 1px #000</span></span></span></div></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">candystripe-color: Currently unavailable. Will be released in a future version.</li>
+                            <li class="list-group-item">animation-speed: Exclude this option for the default 2 second animation speed.
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><div class="meter" id="mas1" data-options='{"animation-speed":1}'><span><span><span>1</span></span></span></div></li>
+                                    <li class="list-group-item"><div class="meter" id="mas10" data-options='{"animation-speed":10}'><span><span><span>10</span></span></span></div></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">reveal-width: version 1 equivalent of data-width property. Exclude this option for 100% reveal.
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><div class="meter" id="mrw80" data-options='{"reveal-width": "80%"}'><span><span><span>80%</span></span></span></div></li>
+                                    <li class="list-group-item"><div class="meter" id="mrw50" data-options='{"reveal-width":"50%"}'><span><span><span>50%</span></span></span></div></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">font-size: Exclude this option for the default page font size. Please note that the bar height does <em>not</em> change with font-size.
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><div class="meter" id="mfs16" data-options='{"font-size":"16px"}'><span><span><span>16px</span></span></span></div></li>
+                                    <li class="list-group-item"><div class="meter" id="mfs2" data-options='{"font-size":"2em"}'><span><span><span>2em</span></span></span></div></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">font-color: Currently unavailable. Will be released in a future version.</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+            
+            <hr>
+
             <div id="styles" class="card bg-dark text-white">
                 <div class="card-header">
                     Default
@@ -174,7 +247,7 @@
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                     <p class="card-text">                            
-                        <div id="default" class="meter" data-width="95%">
+                        <div id="default" class="meter" data-options='{"reveal-width":"95%"}'>
                             <span>
                                 <span>
                                     <span>This line is set to 95%</span>
@@ -185,7 +258,7 @@
                     <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                     <p class="card-text">
                         <pre>
-&lt;div id=&quot;default&quot; class=&quot;meter&quot; data-width=&quot;95%&quot;&gt;
+&lt;div id=&quot;default&quot; class=&quot;meter&quot; data-options='{&quot;reveal-width&quot;:&quot;95%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 95%&lt;/span&gt;
@@ -206,7 +279,7 @@
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                     <p class="card-text">                            
-                        <div id="barNA" class="meter no-animation" data-width="90%">
+                        <div id="barNA" class="meter no-animation" data-options='{"reveal-width":"90%"}'>
                             <span>
                                 <span>
                                     <span>This line is set to 90%</span>
@@ -217,7 +290,7 @@
                     <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                     <p class="card-text">
                         <pre>
-&lt;div id=&quot;barNA&quot; class=&quot;meter no-animation&quot; data-width=&quot;90%&quot;&gt;
+&lt;div id=&quot;barNA&quot; class=&quot;meter no-animation&quot; data-options='{&quot;reveal-width&quot;:&quot;90%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 90%&lt;/span&gt;
@@ -238,7 +311,7 @@
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                     <p class="card-text">                            
-                        <div id="barNS" class="meter no-stripes" data-width="85%">
+                        <div id="barNS" class="meter no-stripes" data-options='{"reveal-width":"85%"}'>
                             <span>
                                 <span>
                                     <span>This line is set to 85%</span>
@@ -249,7 +322,7 @@
                     <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                     <p class="card-text">
                         <pre>
-&lt;div id=&quot;barNS&quot; class=&quot;meter no-stripes&quot; data-width=&quot;85%&quot;&gt;
+&lt;div id=&quot;barNS&quot; class=&quot;meter no-stripes&quot; data-options='{&quot;reveal-width&quot;:&quot;85%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 85%&lt;/span&gt;
@@ -270,7 +343,7 @@
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                     <p class="card-text">                            
-                        <div id="barR" class="meter meter-rounded" data-width="80%">
+                        <div id="barR" class="meter meter-rounded" data-options='{"reveal-width":"80%"}'>
                             <span>
                                 <span>
                                     <span>This line is set to 80%</span>
@@ -281,7 +354,7 @@
                     <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                     <p class="card-text">
                         <pre>
-&lt;div id=&quot;barR&quot; class=&quot;meter meter-rounded&quot; data-width=&quot;80%&quot;&gt;
+&lt;div id=&quot;barR&quot; class=&quot;meter meter-rounded&quot; data-options='{&quot;reveal-width&quot;:&quot;80%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 80%&lt;/span&gt;
@@ -300,7 +373,7 @@
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                         <p class="card-text">                            
-                            <div id="barRT" class="meter meter-rounded-top" data-width="80%">
+                            <div id="barRT" class="meter meter-rounded-top" data-options='{"reveal-width":"80%"}'>
                                 <span>
                                     <span>
                                         <span>This line is set to 80%</span>
@@ -311,7 +384,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                         <p class="card-text">
                             <pre>
-&lt;div id=&quot;barRT&quot; class=&quot;meter meter-rounded-top&quot; data-width=&quot;80%&quot;&gt;
+&lt;div id=&quot;barRT&quot; class=&quot;meter meter-rounded-top&quot; data-options='{&quot;reveal-width&quot;:&quot;80%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 80%&lt;/span&gt;
@@ -329,7 +402,7 @@
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                         <p class="card-text">                            
-                            <div id="barRB" class="meter meter-rounded-bottom" data-width="80%">
+                            <div id="barRB" class="meter meter-rounded-bottom" data-options='{"reveal-width":"80%"}'>
                                 <span>
                                     <span>
                                         <span>This line is set to 80%</span>
@@ -340,7 +413,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                         <p class="card-text">
                             <pre>
-&lt;div id=&quot;barRB&quot; class=&quot;meter meter-rounded-bottom&quot; data-width=&quot;80%&quot;&gt;
+&lt;div id=&quot;barRB&quot; class=&quot;meter meter-rounded-bottom&quot; data-options='{&quot;reveal-width&quot;:&quot;85%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 80%&lt;/span&gt;
@@ -360,7 +433,7 @@
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                         <p class="card-text">                            
-                            <div id="barRL" class="meter meter-rounded-left" data-width="80%">
+                            <div id="barRL" class="meter meter-rounded-left" data-options='{"reveal-width":"80%"}'>
                                 <span>
                                     <span>
                                         <span>This line is set to 80%</span>
@@ -371,7 +444,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                         <p class="card-text">
                             <pre>
-&lt;div id=&quot;barRL&quot; class=&quot;meter meter-rounded-left&quot; data-width=&quot;80%&quot;&gt;
+&lt;div id=&quot;barRL&quot; class=&quot;meter meter-rounded-left&quot; data-options='{&quot;reveal-width&quot;:&quot;85%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 80%&lt;/span&gt;
@@ -389,7 +462,7 @@
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                         <p class="card-text">                            
-                            <div id="barRR" class="meter meter-rounded-right" data-width="80%">
+                            <div id="barRR" class="meter meter-rounded-right" data-options='{"reveal-width":"80%"}'>
                                 <span>
                                     <span>
                                         <span>This line is set to 80%</span>
@@ -400,7 +473,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                         <p class="card-text">
                             <pre>
-&lt;div id=&quot;barRR&quot; class=&quot;meter meter-rounded-right&quot; data-width=&quot;80%&quot;&gt;
+&lt;div id=&quot;barRR&quot; class=&quot;meter meter-rounded-right&quot; data-options='{&quot;reveal-width&quot;:&quot;85%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 80%&lt;/span&gt;
@@ -420,7 +493,7 @@
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                         <p class="card-text">                            
-                            <div id="barRTRBL" class="meter meter-rounded-trbl" data-width="80%">
+                            <div id="barRTRBL" class="meter meter-rounded-trbl" data-options='{"reveal-width":"80%"}'>
                                 <span>
                                     <span>
                                         <span>This line is set to 80%</span>
@@ -431,7 +504,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                         <p class="card-text">
                             <pre>
-&lt;div id=&quot;barRTRBL&quot; class=&quot;meter meter-rounded-trbl&quot; data-width=&quot;80%&quot;&gt;
+&lt;div id=&quot;barRTRBL&quot; class=&quot;meter meter-rounded-trbl&quot; data-options='{&quot;reveal-width&quot;:&quot;85%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 80%&lt;/span&gt;
@@ -449,7 +522,7 @@
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted">Appearance</h6>
                         <p class="card-text">                            
-                            <div id="barRTLBR" class="meter meter-rounded-tlbr" data-width="80%">
+                            <div id="barRTLBR" class="meter meter-rounded-tlbr" data-options='{"reveal-width":"80%"}'>
                                 <span>
                                     <span>
                                         <span>This line is set to 80%</span>
@@ -460,7 +533,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Implementation</h6>
                         <p class="card-text">
                             <pre>
-&lt;div id=&quot;barRTLBR&quot; class=&quot;meter meter-rounded-tlbr&quot; data-width=&quot;80%&quot;&gt;
+&lt;div id=&quot;barRTLBR&quot; class=&quot;meter meter-rounded-tlbr&quot; data-options='{&quot;reveal-width&quot;:&quot;85%&quot;}'&gt;
     &lt;span&gt;
         &lt;span&gt;
             &lt;span&gt;This line is set to 80%&lt;/span&gt;
@@ -482,32 +555,12 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Add support for changing meter background color. (solid colors only)
-                            <span class="badge badge-primary badge-pill">v1.2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
                             Add support for changing meter candystripe color. (solid colors only)
-                            <span class="badge badge-primary badge-pill">v1.3</span>
+                            <span class="badge badge-primary badge-pill">v3.0</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Add support for changing meter font color.
-                            <span class="badge badge-primary badge-pill">v1.4</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Add support for changing meter font sizing.
-                            <span class="badge badge-primary badge-pill">v1.5</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Add support for meter sizing (x-small, small, medium, large, x-large).
-                            <span class="badge badge-primary badge-pill">v1.6</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Add support for meter shadows and colored shadows. (solid colors only)
-                            <span class="badge badge-primary badge-pill">v1.7</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Add support for gradient colors.
-                            <span class="badge badge-primary badge-pill">v1.8</span>
+                            <span class="badge badge-primary badge-pill">v3.0</span>
                         </li>
                     </ul>
                 </div>

@@ -1,4 +1,4 @@
-# JLDN Meters
+# JLDN Meters v2.0.0
 
 The code contained in this package is a result of searching for a way to implement a meter with a gradient background, but with a reveal based on a set inner width. The result is animated, layered HTML elements designed to mimick the html meter / progress tag.
 
@@ -11,9 +11,5 @@ The image below provides samples of the current meter styles in place.
 
 ## Todo
 
-* Add support for other bar colors instead of the default gradient.
 * Add support for other candystripe colors instead of the default.
-* Add support for various meter sizing (x-small, small, medium, large, x-large).
-* Add support for meter shadowing.
 * Add support for font colors instead of the default gradient.
-* Add supoort for font sizing.
