@@ -1,8 +1,8 @@
-# Archives
-*.zip
-
-# YML
-.travis.yml
-
-# Research & Developement
+# Directories
 .RandD
+
+# Files
+*.zip
+.travis.yml
+index.html
+animatedbars-sample.png
