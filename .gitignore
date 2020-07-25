@@ -1,5 +1,8 @@
 # Archives
 *.zip
 
+# YML
+.travis.yml
+
 # Research & Developement
 .RandD
