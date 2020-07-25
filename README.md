@@ -23,7 +23,7 @@ These bars have been designed to 'reveal' a gradient that is hidden. The idea ca
 All instructions and usage information can be found @ [JLDN.org](https://www.repo.jldn.org/JLDN-Meters/).
 
 The image below provides samples of the current meter styles in place.
-![Animated Bars Example](animatedbars-sample.png?raw=true)
+![JLDN Meter Examples](https://www.repo.jldn.org/JLDN-Meters/animatedbars-sample.png)
 
 ## Todo
 
