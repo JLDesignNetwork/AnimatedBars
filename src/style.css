@@ -2,19 +2,14 @@
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v7.0.29,
 * Autoprefixer: v9.7.6
-* Browsers: last 4 version
+* Browsers: last 6 version
 */
 
-/* animated layered bars defaults */
-.meter {
-    font-family: monospace;
-    position: relative;
-    width: 100%;
-    height: 30px;
-    margin: 10px 0;
-    background-color: #555;
-    padding: 0;
-    background-image: linear-gradient(
+/* default meter css rules */
+:root {
+    /* default settings (editable) */
+    /* layer-1 : div.meter */
+    --default-bg: linear-gradient(
         90deg,
         red,
         orange,
@@ -22,54 +17,128 @@
         lime,
         green
     );
-    border: 1px solid #000;
-    z-index: 1;
+    --default-border-size: 1;
+    --default-border-style: solid;
+    --default-border-color: #000;
+    --default-border-radius: 25px;
+    /* layer-2 : div.meter > span */
+    --default-candyStripe-angle: 135deg;
+    --default-candyStripe-color-primary: transparent;
+    --default-candyStripe-color-secondary: rgba(0,0,0,0.1);  
+    --default-animation-duration: 2s;                           /* ([0-9]) */
+    --default-animation-delay: 0s;                              /* ([-]?[0-9]) */
+    --default-animation-count: infinite;                        /* (infinite | [0-9]) */
+    --default-animation-direction: normal;                      /* normal, reverse, alternate, alternate-reverse */
+    --default-animation-timing: linear;                         /* ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(n,n,n,n) */    
+    /* layer-4 : div.meter > span > span > span */
+    --default-font-family: monospace;
+    --default-font-color: #000;
+    --default-font-size: 100%;
+    --default-line-height: 1.2;
+    --default-font-weight: bold;
+    --default-font-variant: small-caps;
+    --default-text-align: center;
+
+    /* layer settings */
+    /* layer-1 : div.meter */
+    --layer-1-width: 100%;
+    --layer-1-height: 30px;
+    --layer-1-index: 1;                         
+    /* layer-2 : div.meter > span */
+    --layer-2-height: 100%;
+    --layer-2-index: 2;
+    /* layer-3 : div.meter > span > span */
+    --layer-3-height: 100%;
+    --layer-3-index: 3;
+    /* layer-4 : div.meter > span > span > span */
+    --vertical-center: calc(50% - calc(1.2em/2 + 2px));
+    --vertical-center-translate: calc(-50% + calc(1.2em/2 + 2px));
+    --layer-4-index: 4;
+}
+
+/* animated layered bars defaults */
+.meter {
+    position: relative;
+    margin: 10px 0;
+    padding: 0;
+    width: var(--layer-1-width);
+    height: var(--layer-1-height);
+    background: var(--default-bg, #555);
+    border: var(--default-border-size) var(--default-border-style) var(--default-border-color);
+    z-index: var(--layer-1-index);
 }
 .meter > span {
     content: "";
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
+    overflow: hidden;
+    background-size: 50px 50px;
+    background-image: 
+        -webkit-gradient(
+        linear, 
+        left top, left bottom, 
+        from(var(--default-candyStripe-angle)), 
+        color-stop(25%, var(--default-candyStripe-color-secondary)), 
+        color-stop(25%, var(--default-candyStripe-color-primary)), 
+        color-stop(50%, var(--default-candyStripe-color-primary)), 
+        color-stop(50%, var(--default-candyStripe-color-secondary)), 
+        color-stop(75%, var(--default-candyStripe-color-secondary)), 
+        color-stop(75%, var(--default-candyStripe-color-primary)), 
+        to(var(--default-candyStripe-color-primary))
+    );
+    background-image: 
+        -o-linear-gradient(
+        var(--default-candyStripe-angle), 
+        var(--default-candyStripe-color-secondary) 25%, 
+        var(--default-candyStripe-color-primary) 25%, 
+        var(--default-candyStripe-color-primary) 50%, 
+        var(--default-candyStripe-color-secondary) 50%, 
+        var(--default-candyStripe-color-secondary) 75%, 
+        var(--default-candyStripe-color-primary) 75%, 
+        var(--default-candyStripe-color-primary)
+    );
     background-image: 
         linear-gradient(
-        -45deg, 
-        rgba(255, 255, 255, .2) 25%, 
-        transparent 25%, 
-        transparent 50%, 
-        rgba(255, 255, 255, .2) 50%, 
-        rgba(255, 255, 255, .2) 75%, 
-        transparent 75%, 
-        transparent
+        var(--default-candyStripe-angle), 
+        var(--default-candyStripe-color-secondary) 25%, 
+        var(--default-candyStripe-color-primary) 25%, 
+        var(--default-candyStripe-color-primary) 50%, 
+        var(--default-candyStripe-color-secondary) 50%, 
+        var(--default-candyStripe-color-secondary) 75%, 
+        var(--default-candyStripe-color-primary) 75%, 
+        var(--default-candyStripe-color-primary)
     );
-    background-size: 50px 50px;
-    -webkit-animation: move 2s linear infinite;
-            animation: move 2s linear infinite;
-    overflow: hidden;
-    z-index: 2;
+    -webkit-animation: candystripe var(--default-animation-duration) var(--default-animation-timing) var(--default-animation-delay) var(--default-animation-count) var(--default-animation-direction);
+            animation: candystripe var(--default-animation-duration) var(--default-animation-timing) var(--default-animation-delay) var(--default-animation-count) var(--default-animation-direction);
+    z-index: var(--layer-2-index);
 }
 .meter > span > span {
     content: "";
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
+    width: var(--layer-1-width);
+    height: var(--layer-2-height);
+    z-index: var(--layer-3-index);
 }
 .meter > span > span > span {
+    position: absolute;
     display: block;
-    width: calc(100% - 2px);
-    text-align: center;
-    font-variant: small-caps;
-    font-weight: bolder;
-    background: linear-gradient(to right,  #ff0000 0%,#ffa500 25%,#ffff00 50%,#00ff00 75%,#008000 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #000;
+    margin: 0;
+    top: var(--vertical-center);
+    -webkit-transform: var(--vertical-center-translate);
+        -ms-transform: var(--vertical-center-translate);
+            transform: var(--vertical-center-translate);
+    color: var(--default-font-color);
+    font: var(--default-font-style) var(--default-font-variant) var(--default-font-weight) var(--default-font-size)/var(--default-line-height) var(--default-font-family);
+    width: var(--layer-1-width);
+    text-align: var(--default-text-align);
+    width: var(--layer-1-width);
+    height: var(--layer-2-height);
+    z-index: var(--layer-4-index);
 }
 
 /* animations */
-@-webkit-keyframes move {
+@-webkit-keyframes candystripe {
     0% {
         background-position: 0 0;
     }
@@ -77,7 +146,7 @@
         background-position: 50px 50px;
     }
 }
-@keyframes move {
+@keyframes candystripe {
     0% {
         background-position: 0 0;
     }
@@ -88,25 +157,254 @@
 
 /* rounded borders */
 .meter-rounded, .meter-rounded > span {
-    border-radius: 25px;
+    border-radius: var(--default-border-radius);
 }
 .meter-rounded-trbl, .meter-rounded-trbl > span {
-    border-radius: 0 25px;
+    border-radius: 0 var(--default-border-radius);
 }
 .meter-rounded-tlbr, .meter-rounded-tlbr > span {
-    border-radius: 25px 0;
+    border-radius: var(--default-border-radius) 0;
 }
 .meter-rounded-bottom, .meter-rounded-bottom > span {
-    border-radius: 0 0 25px 25px;
+    border-radius: 0 0 var(--default-border-radius) var(--default-border-radius);
 }
 .meter-rounded-top, .meter-rounded-top > span {
-    border-radius: 25px 25px 0 0;
+    border-radius: var(--default-border-radius) var(--default-border-radius) 0 0;
 }
 .meter-rounded-left, .meter-rounded-left > span {
-    border-radius: 25px 0 0 25px;
+    border-radius: var(--default-border-radius) 0 0 var(--default-border-radius);
 }
 .meter-rounded-right, .meter-rounded-right > span {
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 var(--default-border-radius) var(--default-border-radius) 0;
+}
+
+
+/* bar colors */
+.red {
+    background-image: none;
+    background-color: red;
+}
+.green {
+    background-image: none;
+    background-color: green;
+}
+.yellow {
+    background-image: none;
+    background-color: yellow;
+}
+.lime {
+    background-image: none;
+    background-color: lime;
+}
+.orange {
+    background-image: none;
+    background-color: orange;
+}
+.blue {
+    background-image: none;
+    background-color: blue;
+}
+.purple {
+    background-image: none;
+    background-color: purple;
+}
+.black {
+    background-image: none;
+    background-color: black;
+}
+
+/* candystripe colors */
+.red-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(255, 0, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 0, 0, .2) 50%, 
+        rgba(255, 0, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(255, 0, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 0, 0, .2) 50%, 
+        rgba(255, 0, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.green-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(0, 128, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 128, 0, .2) 50%, 
+        rgba(0, 128, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(0, 128, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 128, 0, .2) 50%, 
+        rgba(0, 128, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.yellow-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(255, 255, 0, 0.2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 0, .2) 50%, 
+        rgba(255, 255, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(255, 255, 0, 0.2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 0, .2) 50%, 
+        rgba(255, 255, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.lime-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(0, 255, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 255, 0, .2) 50%, 
+        rgba(0, 255, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(0, 255, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 255, 0, .2) 50%, 
+        rgba(0, 255, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.orange-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(255, 165, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 165, 0, .2) 50%, 
+        rgba(255, 165, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(255, 165, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 165, 0, .2) 50%, 
+        rgba(255, 165, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.blue-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(0, 0, 255, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 0, 255, .2) 50%, 
+        rgba(0, 0, 255, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(0, 0, 255, 0.6) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 0, 255, 0.6) 50%, 
+        rgba(0, 0, 255, 0.6) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.purple-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(128, 0, 128, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(128, 0, 128, .2) 50%, 
+        rgba(128, 0, 128, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(128, 0, 128, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(128, 0, 128, .2) 50%, 
+        rgba(128, 0, 128, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+}
+.black-stripe > span {
+    background-image: 
+        -o-linear-gradient(
+        135deg, 
+        rgba(0, 0, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 0, 0, .2) 50%, 
+        rgba(0, 0, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-image: 
+        linear-gradient(
+        -45deg, 
+        rgba(0, 0, 0, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 0, 0, .2) 50%, 
+        rgba(0, 0, 0, .2) 75%, 
+        transparent 75%, 
+        transparent
+    );
 }
 
 /* remove candystripping */
