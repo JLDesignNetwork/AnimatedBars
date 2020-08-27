@@ -1,4 +1,4 @@
-# JLDN Meters v2.0.0
+# JLDN Meters v3.0.1
 
 ![GitHub All Releases](https://img.shields.io/github/downloads/JLDesignNetwork/JLDN-Meters/total?color=brightgreen&style=plastic)
 
@@ -17,15 +17,14 @@ These bars have been designed to 'reveal' a gradient that is hidden. The idea ca
 - Font size control
 - Animation speed control
 - Reveal width control
+- Candystripe color control
+- Font color control
 
 ## Instructions
 
-All instructions and usage information can be found @ [JLDN.org](https://www.repo.jldn.org/JLDN-Meters/).
+All instructions and usage information can be found @ [JLDN.org](https://www.repo.jldn.org/JLDN-Meters/) or [Github IO](https://jldesignnetwork.github.io/JLDN-Meters/).
 
 The image below provides samples of the current meter styles in place.
 ![JLDN Meter Examples](https://www.repo.jldn.org/JLDN-Meters/animatedbars-sample.png)
 
 ## Todo
-
-* Add support for other candystripe colors instead of the default.
-* Add support for font colors instead of the default gradient.
