@@ -5,9 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [3.0.0] - 2020-08-27
 
-## [2.0.1] - 2020-07024
+### Fixed
+
+- Text positioning.
+
+### Changed
+
+- Index.html: update for version, new styles, and usage.
+- Style.css: full css update to reflect css variable usage.
+- Script.js: update for new features.
+
+### Added
+
+- Style.css: css variables.
+- Script.js: candystripe-color support.
+- Script.js: font-color support.
+
+### Removed
+
+- Style.css: Internet Explorer support.
+- Style.css: Gradient font effect.
+- Index.html: Internet Explorer support.
+
+## [2.0.1] - 2020-07-24
 
 ### Changed
 
@@ -36,9 +58,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.1] - 2020-07-23
 
+### Fixed
+
+- Fixed: display error with candystripe width on window resize.
+
 ### Added
 
-- Display error, with candystripe width when resizing window, fixed.
 - CHANGELOG.md: created.
 - .gitignore: created.
 
@@ -54,7 +79,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Support for multiple bars per page.
 - Index.html: updated with usage instructions.
-- Various borders style support.
+- Rounded border style support.
 
 ### Changed
 
