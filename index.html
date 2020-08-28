@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>JLDN Meters v3.0.0</title>
+		<title>JLDN Meters</title>
 		<meta name="description" content="JL Design Network Meters">
 		<meta name="author" content="JLDesignNetwork">
 		<meta name="version" content="3">
@@ -16,10 +16,16 @@
 		<!-- JLDNMeter CSS -->
 		<link href="src/style.css" rel="stylesheet">
 		<style>
+			:root {
+				--version: "1";
+			}
 			/* Default page style */
 			*, html {
 				padding: 0;
 				margin: 0;
+			}
+			.version:after {
+				content: var(--version);
 			}
 			article, aside, figure, footer, header, hgroup,
 			menu, nav, section {
@@ -30,7 +36,6 @@
 				background-color: #333;
 				font: 16pt 'Fondamento', cursive;
 				text-align: center;
-				text-shadow: 1px 1px 0 #000;
 				width: 80vw;
 				margin: 10vh auto;
 			}
@@ -89,7 +94,7 @@
 	</head>
 	<body>
 		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-		<h1>JLDN Meters v3.0</h1>
+		<h1>JLDN Meters <span class="version">v</span></h1>
 		<div class="container">
 			<div id="menu" class="card bg-dark text-white text-center">
 				<div class="card-header">
@@ -112,7 +117,7 @@
 					</ul>
 				</div>
 				<div class="card-body">
-					<p class="card-text">Thank you for choosing to download and use version 3 of the JL Design Network meters.<br><br>On this page you will find instructions on how to implement and use the meters. Additionally you will find examples of what the meters look like. At the bottom of this page is a todo list of future features and versioning to expect that feature in.<br><br>The versioning is not set in stone and likely that feature will be released sooner. The projected versioning is just a cushion for success.</p>
+					<p class="card-text">Thank you for choosing to download and use version <span class="version"></span> of the JL Design Network meters. On this page you will find instructions on how to implement and use the meters. Additionally you will find examples of what the meters look like. At the bottom of this page is a todo list of future features and versioning to expect that feature in.<br><br>The versioning is not set in stone and likely that feature will be released sooner. The projected versioning is just a cushion for success.</p>
 				</div>
 			</div>
 
@@ -156,7 +161,7 @@
 					</p>
 					<p class="card-text">4. Edit the JLDNMeter CSS &lt;link&gt; and the JLDNMeter JS &lt;script&gt; so that it points to the location of the "src" folder.</p>
 					<p class="card-text">5. Copy/paste the code, from any of the styles found below, into your HTML document.</p>
-					<p class="card-text">6. Set the visibility of the meter by changing the value of the attribute 'data-width', found in the &lt;div&gt; containing the 'meter' class. </p>
+					<p class="card-text">6. Set the visibility of the meter by changing the value of "reveal-width", or setting the "reveal-width" inside the "data-options" attribute, found in the &lt;div&gt; containing the 'meter' class. </p>
 					<hr>
 					<h6 class="card-subtitle mb-2 text-muted">Additional</h6>
 					<p class="card-text">Each meter requires a unique id in the &lt;div&gt; where the meter class is defined. Failure to include a unique id may result in unexpected or unusual behavior.</p>
@@ -195,10 +200,10 @@
 							</li>
 							<li class="list-group-item">meter-color: Exclude this option to use the default gradient. This option accepts valid color names, hex codes, rgb/rgba strings, and hsl/hsla strings.
 								<ul class="list-group list-group-flush">
-									<li class="list-group-item"><div class="meter" id="mcblue" data-options='{"meter-color":"blue"}'><span><span><span>blue</span></span></span></div></li>
-									<li class="list-group-item"><div class="meter" id="mcred" data-options='{"meter-color":"rgba(255, 0, 0, 0.6)"}'><span><span><span>rgba(255,0,0,0.6)</span></span></span></div></li>
-									<li class="list-group-item"><div class="meter" id="mcblack" data-options='{"meter-color":"#000"}'><span><span><span>#000</span></span></span></div></li>
-									<li class="list-group-item"><div class="meter" id="mcbloodred" data-options='{"meter-color":"hsl(0,100%,20%)"}'><span><span><span>hsl(0,100%,20%)</span></span></span></div></li>
+									<li class="list-group-item"><div class="meter" id="mc1" data-options='{"meter-color":"blue"}'><span><span><span>blue</span></span></span></div></li>
+									<li class="list-group-item"><div class="meter" id="mc2" data-options='{"meter-color":"rgba(255, 0, 0, 0.6)"}'><span><span><span>rgba(255,0,0,0.6)</span></span></span></div></li>
+									<li class="list-group-item"><div class="meter" id="mc3" data-options='{"meter-color":"#0e8"}'><span><span><span>#0e8</span></span></span></div></li>
+									<li class="list-group-item"><div class="meter" id="mc4" data-options='{"meter-color":"hsl(58,100%,20%)"}'><span><span><span>hsl580,100%,20%)</span></span></span></div></li>
 								</ul>
 							</li>
 							<li class="list-group-item">meter-shadow: Exclude this option for no box-shadow. This option requires a valid CSS box-shadow string.
@@ -629,6 +634,12 @@
 				document.documentElement.scrollTop = 0;
 			}
 			$(document).ready(function() {
+				// automatic version updating; based on package.json version	
+				$.getJSON("package.json", function(json) {
+					let title = "JLDN Meters v" + json.version;
+					document.title = title;
+					document.documentElement.style.setProperty("--version",'"' +json.version+ '"');
+				});
 				var prev;
 				var btnText;
 
