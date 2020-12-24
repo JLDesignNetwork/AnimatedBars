@@ -4,6 +4,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/JLDesignNetwork/JLDN-Meters?style=for-the-badge)](https://github.com/JLDesignNetwork/JLDN-Meters/network)
 [![GitHub stars](https://img.shields.io/github/stars/JLDesignNetwork/JLDN-Meters?style=for-the-badge)](https://github.com/JLDesignNetwork/JLDN-Meters/stargazers)
 [![GitHub license](https://img.shields.io/github/license/JLDesignNetwork/JLDN-Meters?style=for-the-badge)](https://github.com/JLDesignNetwork/JLDN-Meters/blob/master/LICENSE.txt)
+![GitHub repo size](https://img.shields.io/github/repo-size/JLDesignNetwork/JLDN-Meters?style=for-the-badge)
 
 The code contained in this package is a result of searching for a way to implement a meter with a gradient background, but with a reveal based on a set inner width. The result is animated, layered HTML elements designed to mimick the html meter / progress tag.
 
