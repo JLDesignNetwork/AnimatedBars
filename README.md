@@ -1,7 +1,5 @@
 # JLDN Meters v3.0.1
 
-![GitHub All Releases](https://img.shields.io/github/downloads/JLDesignNetwork/JLDN-Meters/total?color=brightgreen&style=plastic)
-
 The code contained in this package is a result of searching for a way to implement a meter with a gradient background, but with a reveal based on a set inner width. The result is animated, layered HTML elements designed to mimick the html meter / progress tag.
 
 The CSS code and HTML layout provided has been edited from its original form. Both the CSS and HTML layout was designed by Chris Coyier @ [CSS-Tricks](http://css-tricks.com).
