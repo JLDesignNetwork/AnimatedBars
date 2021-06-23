@@ -1,0 +1,248 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 10 version
+*/
+
+/* default meter css variables */
+:root {
+    /* default settings (editable) */
+    /* layer-1 : div.meter */
+    --default-bg: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        green
+    );
+    --default-border-size: 1;
+    --default-border-style: solid;
+    --default-border-color: #000;
+    --default-border-radius: 25px;
+    /* layer-2 : div.meter > span */
+    --default-candyStripe-angle: 135deg;
+    --default-candyStripe-color-primary: transparent;
+    --default-candyStripe-color-secondary: rgba(0,0,0,0.1);  
+    --default-animation-duration: 2s;                           /* ([0-9]) */
+    --default-animation-delay: 0s;                              /* ([-]?[0-9]) */
+    --default-animation-count: infinite;                        /* (infinite | [0-9]) */
+    --default-animation-direction: normal;                      /* normal, reverse, alternate, alternate-reverse */
+    --default-animation-timing: linear;                         /* ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(n,n,n,n) */    
+    /* layer-4 : div.meter > span > span > span */
+    --default-font-family: monospace;
+    --default-font-color: #000;
+    --default-font-size: 100%;
+    --default-line-height: 1.2;
+    --default-font-weight: bold;
+    --default-font-variant: small-caps;
+    --default-text-align: center;
+
+    /* layer settings */
+    /* layer-1 : div.meter */
+    --layer-1-width: 100%;
+    --layer-1-height: 30px;
+    --layer-1-index: 1;                         
+    /* layer-2 : div.meter > span */
+    --layer-2-height: 100%;
+    --layer-2-index: 2;
+    /* layer-3 : div.meter > span > span */
+    --layer-3-height: 100%;
+    --layer-3-index: 3;
+    /* layer-4 : div.meter > span > span > span */
+    --vertical-center: calc(50% - calc(1.2em/2 + 2px));
+    --vertical-center-translate: calc(-50% + calc(1.2em/2 + 2px));
+    --layer-4-index: 4;
+}
+
+/* animated layered bars defaults */
+.meter {
+    position: relative;
+    margin: 10px 0;
+    padding: 0;
+    width: var(--layer-1-width);
+    height: var(--layer-1-height);
+    background: var(--default-bg, #555);
+    border: var(--default-border-size) var(--default-border-style) var(--default-border-color);
+    z-index: var(--layer-1-index);
+    > span {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        overflow: hidden;
+        background-size: 50px 50px;
+        background-image: 
+            -webkit-gradient(
+                linear, 
+                left top, left bottom, 
+                from(var(--default-candyStripe-angle)), 
+                color-stop(25%, var(--default-candyStripe-color-secondary)), 
+                color-stop(25%, var(--default-candyStripe-color-primary)), 
+                color-stop(50%, var(--default-candyStripe-color-primary)), 
+                color-stop(50%, var(--default-candyStripe-color-secondary)), 
+                color-stop(75%, var(--default-candyStripe-color-secondary)), 
+                color-stop(75%, var(--default-candyStripe-color-primary)), 
+                to(var(--default-candyStripe-color-primary))
+            );
+        background-image: 
+            -o-linear-gradient(
+                var(--default-candyStripe-angle), 
+                var(--default-candyStripe-color-secondary) 25%, 
+                var(--default-candyStripe-color-primary) 25%, 
+                var(--default-candyStripe-color-primary) 50%, 
+                var(--default-candyStripe-color-secondary) 50%, 
+                var(--default-candyStripe-color-secondary) 75%, 
+                var(--default-candyStripe-color-primary) 75%, 
+                var(--default-candyStripe-color-primary)
+            );
+        background-image: 
+            linear-gradient(
+                var(--default-candyStripe-angle), 
+                var(--default-candyStripe-color-secondary) 25%, 
+                var(--default-candyStripe-color-primary) 25%, 
+                var(--default-candyStripe-color-primary) 50%, 
+                var(--default-candyStripe-color-secondary) 50%, 
+                var(--default-candyStripe-color-secondary) 75%, 
+                var(--default-candyStripe-color-primary) 75%, 
+                var(--default-candyStripe-color-primary)
+            );
+        -webkit-animation: candystripe var(--default-animation-duration) var(--default-animation-timing) var(--default-animation-delay) var(--default-animation-count) var(--default-animation-direction);
+           -moz-animation: candystripe var(--default-animation-duration) var(--default-animation-timing) var(--default-animation-delay) var(--default-animation-count) var(--default-animation-direction);
+             -o-animation: candystripe var(--default-animation-duration) var(--default-animation-timing) var(--default-animation-delay) var(--default-animation-count) var(--default-animation-direction);
+                animation: candystripe var(--default-animation-duration) var(--default-animation-timing) var(--default-animation-delay) var(--default-animation-count) var(--default-animation-direction);
+        z-index: var(--layer-2-index);
+        > span {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            width: var(--layer-1-width);
+            height: var(--layer-2-height);
+            z-index: var(--layer-3-index);
+            > span {
+                position: absolute;
+                display: block;
+                margin: 0;
+                top: var(--vertical-center);
+                -webkit-transform: var(--vertical-center-translate);
+                   -moz-transform: var(--vertical-center-translate);
+                    -ms-transform: var(--vertical-center-translate);
+                     -o-transform: var(--vertical-center-translate);
+                        transform: var(--vertical-center-translate);
+                color: var(--default-font-color);
+                font: var(--default-font-style) var(--default-font-variant) var(--default-font-weight) var(--default-font-size)/var(--default-line-height) var(--default-font-family);
+                width: var(--layer-1-width);
+                text-align: var(--default-text-align);
+                height: var(--layer-2-height);
+                z-index: var(--layer-4-index);
+            }
+        }
+    }
+}
+
+@mixin roundBorders($all: null, $top-left: null, $top-right: null, $bottom-right: null, $bottom-left: null) {
+    @if($all != null) {
+        border-radius: $all;
+    } @else {
+        border-top-left-radius: if($top-left != null, $top-left, 0);
+        border-top-right-radius: if($top-right != null, $top-right, 0);
+        border-bottom-left-radius: if($bottom-left != null, $bottom-left, 0);
+        border-bottom-right-radius: if($bottom-right != null, $bottom-right, 0);
+    }
+    & > span {
+        border-radius: inherit;
+    }
+}
+/* rounded borders: all */
+.meter-rounded {
+    @include roundBorders($all: var(--default-border-radius));
+}
+/* rounded borders: top-right bottom-left */
+.meter-rounded-trbl {
+    @include roundBorders($top-right: var(--default-border-radius), $bottom-left: var(--default-border-radius));
+}
+/* rounded borders: top-left bottom-right */
+.meter-rounded-tlbr {
+    @include roundBorders($top-left: var(--default-border-radius), $bottom-right: var(--default-border-radius));
+}
+/* rounded borders: top */
+.meter-rounded-top {
+    @include roundBorders($top-right: var(--default-border-radius), $top-left: var(--default-border-radius));
+}
+/* rounded borders: right */
+.meter-rounded-right {
+    @include roundBorders($bottom-right: var(--default-border-radius), $top-right: var(--default-border-radius));
+}
+/* rounded borders: bottom */
+.meter-rounded-bottom {
+    @include roundBorders($bottom-right: var(--default-border-radius), $bottom-left: var(--default-border-radius));
+}
+/* rounded borders: left */
+.meter-rounded-left {
+    @include roundBorders($bottom-left: var(--default-border-radius), $top-left: var(--default-border-radius));
+}
+
+/* remove candystripping */
+.no-stripes {
+    > span {
+        -webkit-animation: none;    /* Android, Safari, Chrome, iOS */
+           -moz-animation: none;    /* Firefox */
+             -o-animation: none;    /* Opera */
+                animation: none;
+         background-image: none;
+    }
+}
+
+/* remove animation */
+.no-animation {
+    > span {
+        -webkit-animation: none;    /* Android, Safari, Chrome, iOS */
+           -moz-animation: none;    /* Firefox */
+             -o-animation: none;    /* Opera */
+                animation: none;
+    }
+}
+
+@mixin bgAnimation($name, $start-position, $end-position) {
+    @at-root {
+        /* Android, Safari, Chrome, iOS */
+        @-webkit-keyframes #{$name} {
+            0% {
+                background-position: $start-position;
+            }
+            100% {
+                background-position: $end-position;
+            }
+        }
+        /* Firefox */
+        @-moz-keyframes #{$name} {
+            0% {
+                background-position: $start-position;
+            }
+            100% {
+                background-position: $end-position;
+            }
+        } 
+        /* Opera */
+        @-o-keyframes #{$name} {
+            0% {
+                background-position: $start-position;
+            }
+            100% {
+                background-position: $end-position;
+            }
+        }
+        @keyframes #{$name} {
+            0% {
+                background-position: $start-position;
+            }
+            100% {
+                background-position: $end-position;
+            }
+        }
+    }
+}
+/* 
+    candystripe animation 
+*/
+@include bgAnimation(candystripe, 0 0, 50px 50px);
